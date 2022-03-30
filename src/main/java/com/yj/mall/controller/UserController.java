@@ -22,19 +22,13 @@ import javax.validation.Valid;
  * 2022/3/25 17:09
  */
 @RestController
-
 @Slf4j
 public class UserController {
     @Autowired
     private IUserService userService;
 
     @PostMapping("/user/register")
-    public ResponseVo register(@Valid @RequestBody UserRegisterForm userRegisterForm, BindingResult bindingResult){
-        if (bindingResult.hasErrors()){
-            log.info("注册提交参数有误{} {}",bindingResult.getFieldError().getField(),
-                    bindingResult.getFieldError().getDefaultMessage());
-            return ResponseVo.error(ResponseEnum.PARAM_ERROR, bindingResult);
-        }
+    public ResponseVo register(@Valid @RequestBody UserRegisterForm userRegisterForm){
         User user = new User();
         //对象拷贝的方法
         BeanUtils.copyProperties(userRegisterForm,user);
@@ -44,11 +38,8 @@ public class UserController {
 
     @PostMapping("/user/login")
     public ResponseVo<User> login(@Valid@RequestBody UserLoginForm userLoginForm,
-                                  BindingResult bindingResult,
                                   HttpSession session){
-        if (bindingResult.hasErrors()){
-            return ResponseVo.error(ResponseEnum.PARAM_ERROR, bindingResult);
-        }
+
         ResponseVo<User> userResponseVo = userService.login(userLoginForm.getUsername(), userLoginForm.getPassword());
         //设置session
         session.setAttribute(MallConst.CURRENT_USER,userResponseVo.getData());

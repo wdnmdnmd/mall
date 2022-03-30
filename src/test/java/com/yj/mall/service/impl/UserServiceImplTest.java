@@ -1,7 +1,6 @@
 package com.yj.mall.service.impl;
 
 import com.yj.mall.MallApplicationTests;
-import com.yj.mall.dao.UserMapper;
 import com.yj.mall.enums.ResponseEnum;
 import com.yj.mall.enums.RoleEnum;
 import com.yj.mall.pojo.User;
@@ -12,14 +11,12 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.Assert.*;
-
 /**
  * create by 86136
  * 2022/3/23 21:42
  */
 @Transactional
-public class IUserServiceImplTest extends MallApplicationTests {
+public class UserServiceImplTest extends MallApplicationTests {
     @Autowired
     private IUserService userService;
     public static final String USERNAME="jack";

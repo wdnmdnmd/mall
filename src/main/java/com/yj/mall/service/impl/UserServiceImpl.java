@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
  * 2022/3/23 21:21
  */
 @Service
-public class IUserServiceImpl implements IUserService {
+public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
 
