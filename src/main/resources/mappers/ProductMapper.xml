@@ -26,14 +26,33 @@
         from mall_product
         where id = #{id,jdbcType=INTEGER}
     </select>
+<!--       如果类别id集合为空，就应该不显示任何返回值-->
     <select id="selectByCategoryIdSet" resultType="com.yj.mall.pojo.Product">
         select
         <include refid="Base_Column_List"/>
         from mall_product
         where status=1
+        <if test="categoryIdSet.size()==0">
+            and 1<![CDATA[<]]>0
+        </if>
         <if test="categoryIdSet.size()>0">
-            and category_id in
+            and id in
             <foreach collection="categoryIdSet" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+    <select id="selectByProductIdSet" resultType="com.yj.mall.pojo.Product">
+        select
+        <include refid="Base_Column_List"/>
+        from mall_product
+        where status=1
+        <if test="productIdSet.size()==0">
+            and 1<![CDATA[<]]>0
+        </if>
+        <if test="productIdSet.size()>0">
+            and id in
+            <foreach collection="productIdSet" item="item" index="index" open="(" separator="," close=")">
                 #{item}
             </foreach>
         </if>

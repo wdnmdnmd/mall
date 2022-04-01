@@ -1,19 +1,16 @@
 package com.yj.mall.controller;
 
-import com.yj.mall.Form.UserLoginForm;
-import com.yj.mall.Form.UserRegisterForm;
+import com.yj.mall.form.UserLoginForm;
+import com.yj.mall.form.UserRegisterForm;
 import com.yj.mall.consts.MallConst;
-import com.yj.mall.enums.ResponseEnum;
 import com.yj.mall.pojo.User;
 import com.yj.mall.service.IUserService;
 import com.yj.mall.vo.ResponseVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 

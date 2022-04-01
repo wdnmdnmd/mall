@@ -1,4 +1,4 @@
-package com.yj.mall.Form;
+package com.yj.mall.form;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
  * 2022/3/25 18:54
  */
 @Data
-public class UserRegisterForm {
+public class UserLoginForm {
     //    @NotBlank 用于String 判断空格
 //    @NotNull
 //    @NotEmpty 用于集合
@@ -17,6 +17,4 @@ public class UserRegisterForm {
     private String username;
     @NotBlank
     private String password;
-    @NotBlank
-    private String email;
 }

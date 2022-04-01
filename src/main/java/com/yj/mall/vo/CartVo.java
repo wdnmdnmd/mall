@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Data
 public class CartVo {
-    private List<cartProductVo> cartProductVoList;
+    private List<CartProductVo> cartProductVoList;
     private Boolean selectAll;
     //购物车所有商品总价
     private BigDecimal cartTotalPrice;

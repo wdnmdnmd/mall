@@ -1,4 +1,4 @@
-package com.yj.mall.Form;
+package com.yj.mall.form;
 
 import lombok.Data;
 
