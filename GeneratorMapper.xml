@@ -66,16 +66,28 @@
 <!--               enableDeleteByExample="false"-->
 <!--               enableSelectByExample="false"-->
 <!--               selectByExampleQueryId="false"/>-->
-        <table tableName="mall_product" domainObjectName="Product"
+<!--        <table tableName="mall_product" domainObjectName="Product"-->
+<!--               enableCountByExample="false"-->
+<!--               enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false"-->
+<!--               selectByExampleQueryId="false">-->
+<!--&lt;!&ndash;            避免插件为数据库中的text数据类型又生成一个对象&ndash;&gt;-->
+<!--            <columnOverride column="detail" jdbcType="VARCHAR"/>-->
+<!--            <columnOverride column="sub_images" jdbcType="VARCHAR"/>-->
+<!--        </table>-->
+<!--        收货地址表-->
+        <table tableName="mall_shipping" domainObjectName="Shipping"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
-<!--            避免插件为数据库中的text数据类型又生成一个对象-->
+            <!--            避免插件为数据库中的text数据类型又生成一个对象-->
             <columnOverride column="detail" jdbcType="VARCHAR"/>
             <columnOverride column="sub_images" jdbcType="VARCHAR"/>
         </table>
+
 
     </context>
 
